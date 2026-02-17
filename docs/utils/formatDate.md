@@ -1,6 +1,6 @@
 # formatDate
 
-날짜를 로케일에 맞게 포맷합니다.
+Formats a date according to the locale.
 
 ## API
 
@@ -16,32 +16,32 @@ function formatDate(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| date | `Date \| string \| number` | - | 포맷할 날짜 (Date, ISO 문자열, 타임스탬프) |
-| options | `Intl.DateTimeFormatOptions` | - | 포맷 옵션 |
-| locale | `string` | `'en-US'` | 로케일 |
+| date | `Date \| string \| number` | - | The date to format (Date, ISO string, or timestamp) |
+| options | `Intl.DateTimeFormatOptions` | - | Format options |
+| locale | `string` | `'en-US'` | Locale |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `string` | 포맷된 날짜 문자열 |
+| `string` | Formatted date string |
 
 ## Usage
 
 ```tsx
 import { formatDate } from 'reactives-hooks/utils'
 
-// 기본 포맷
+// Default format
 formatDate(new Date()) // "2/18/2026"
 
-// 커스텀 포맷
+// Custom format
 formatDate(new Date(), {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 }) // "February 18, 2026"
 
-// 한국어 로케일
+// Korean locale
 formatDate(new Date(), {
   year: 'numeric',
   month: 'long',
@@ -49,14 +49,14 @@ formatDate(new Date(), {
   weekday: 'long',
 }, 'ko-KR') // "2026년 2월 18일 수요일"
 
-// ISO 문자열 입력
+// ISO string input
 formatDate('2026-01-01T00:00:00Z') // "1/1/2026"
 
-// 타임스탬프 입력
+// Timestamp input
 formatDate(1767225600000) // "1/1/2026"
 ```
 
 ## Notes
 
-- `Intl.DateTimeFormat`을 사용하여 로케일 인식 포맷을 제공합니다.
-- Date 객체, ISO 문자열, Unix 타임스탬프를 모두 입력으로 받을 수 있습니다.
+- Uses `Intl.DateTimeFormat` to provide locale-aware formatting.
+- Accepts Date objects, ISO strings, and Unix timestamps as input.

@@ -1,6 +1,6 @@
 # useFetch
 
-abort 지원이 포함된 fetch 래퍼입니다.
+A fetch wrapper with abort support.
 
 ## API
 
@@ -15,22 +15,22 @@ function useFetch<T>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| url | `string` | - | 요청 URL |
-| options.enabled | `boolean` | `true` | fetch 활성화 여부 |
-| options.method | `string` | - | HTTP 메서드 |
-| options.headers | `HeadersInit` | - | 요청 헤더 |
-| options.body | `BodyInit` | - | 요청 본문 |
+| url | `string` | - | Request URL |
+| options.enabled | `boolean` | `true` | Whether fetch is enabled |
+| options.method | `string` | - | HTTP method |
+| options.headers | `HeadersInit` | - | Request headers |
+| options.body | `BodyInit` | - | Request body |
 
-`options`는 `RequestInit`의 모든 속성을 지원합니다.
+`options` supports all properties of `RequestInit`.
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| data | `T \| null` | 응답 데이터 |
-| loading | `boolean` | 로딩 상태 |
-| error | `Error \| null` | 에러 객체 |
-| refetch | `() => Promise<void>` | 재요청 함수 |
+| data | `T \| null` | Response data |
+| loading | `boolean` | Loading state |
+| error | `Error \| null` | Error object |
+| refetch | `() => Promise<void>` | Refetch function |
 
 ## Usage
 
@@ -56,6 +56,6 @@ function PostList() {
 
 ## Notes
 
-- 컴포넌트 언마운트 시 `AbortController`로 자동으로 요청을 취소합니다.
-- `enabled`를 `false`로 설정하면 fetch를 비활성화할 수 있습니다.
-- HTTP 에러 응답(non-ok status)도 에러로 처리합니다.
+- Automatically cancels the request with `AbortController` when the component unmounts.
+- Set `enabled` to `false` to disable the fetch.
+- HTTP error responses (non-ok status) are also treated as errors.

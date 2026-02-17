@@ -1,6 +1,6 @@
 # useQueryParams
 
-타입 안전한 URL 쿼리 파라미터를 관리합니다.
+Manages type-safe URL query parameters.
 
 ## API
 
@@ -16,17 +16,17 @@ function useQueryParams<T extends Record<string, string>>(): {
 
 ### Parameters
 
-없음 (Next.js navigation 훅을 내부적으로 사용)
+None (uses Next.js navigation hooks internally)
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| params | `Partial<T>` | 현재 쿼리 파라미터 |
-| set | `(key: keyof T, value: string) => void` | 단일 파라미터 설정 |
-| setAll | `(params: Partial<T>) => void` | 여러 파라미터 일괄 설정 |
-| delete | `(key: keyof T) => void` | 파라미터 삭제 |
-| clear | `() => void` | 모든 파라미터 초기화 |
+| params | `Partial<T>` | Current query parameters |
+| set | `(key: keyof T, value: string) => void` | Set a single parameter |
+| setAll | `(params: Partial<T>) => void` | Set multiple parameters at once |
+| delete | `(key: keyof T) => void` | Delete a parameter |
+| clear | `() => void` | Clear all parameters |
 
 ## Usage
 
@@ -61,6 +61,6 @@ function SearchPage() {
 
 ## Notes
 
-- `'use client'` 컴포넌트에서만 사용 가능합니다.
-- 페이지 새로고침 없이 URL을 업데이트합니다.
-- Next.js의 `useSearchParams`, `useRouter`, `usePathname`을 내부적으로 사용합니다.
+- Can only be used in `'use client'` components.
+- Updates the URL without a page reload.
+- Uses Next.js `useSearchParams`, `useRouter`, and `usePathname` internally.

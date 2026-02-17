@@ -1,6 +1,6 @@
 # useBoolean
 
-명시적인 boolean 제어 메서드를 제공합니다.
+Provides explicit boolean control methods.
 
 ## API
 
@@ -12,17 +12,17 @@ function useBoolean(initialValue?: boolean): UseBooleanReturn
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| initialValue | `boolean` | `false` | 초기 상태 |
+| initialValue | `boolean` | `false` | Initial state |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| value | `boolean` | 현재 상태 |
-| setTrue | `() => void` | `true`로 설정 |
-| setFalse | `() => void` | `false`로 설정 |
-| toggle | `() => void` | 현재 값 토글 |
-| setValue | `(value: boolean) => void` | 직접 값 설정 |
+| value | `boolean` | Current state |
+| setTrue | `() => void` | Set to `true` |
+| setFalse | `() => void` | Set to `false` |
+| toggle | `() => void` | Toggle the current value |
+| setValue | `(value: boolean) => void` | Set the value directly |
 
 ## Usage
 

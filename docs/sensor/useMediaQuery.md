@@ -1,6 +1,6 @@
 # useMediaQuery
 
-CSS 미디어 쿼리의 매칭 상태를 추적합니다.
+Tracks the matching state of a CSS media query.
 
 ## API
 
@@ -12,13 +12,13 @@ function useMediaQuery(query: string): boolean
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| query | `string` | - | CSS 미디어 쿼리 문자열 |
+| query | `string` | - | CSS media query string |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `boolean` | 미디어 쿼리 매칭 여부 |
+| `boolean` | Whether the media query matches |
 
 ## Usage
 
@@ -40,5 +40,5 @@ function ResponsiveLayout() {
 
 ## Notes
 
-- SSR 환경에서는 `false`를 반환합니다.
-- 뷰포트 변경 시 실시간으로 업데이트됩니다.
+- Returns `false` in SSR environments.
+- Updates in real time when the viewport changes.

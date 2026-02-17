@@ -1,6 +1,6 @@
 # useSet
 
-Set 자료구조의 상태를 관리합니다.
+Manages the state of a Set data structure.
 
 ## API
 
@@ -14,20 +14,20 @@ function useSet<T>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| initialValue | `Iterable<T>` | `[]` | 초기 Set 요소 |
+| initialValue | `Iterable<T>` | `[]` | Initial Set elements |
 
 ### Returns
 
-`[set, actions]` 튜플을 반환합니다.
+Returns a `[set, actions]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| set | `Set<T>` | 현재 Set 상태 |
-| actions.add | `(value: T) => void` | 요소 추가 |
-| actions.delete | `(value: T) => void` | 요소 삭제 |
-| actions.clear | `() => void` | 모든 요소 삭제 |
-| actions.reset | `() => void` | 초기값으로 리셋 |
-| actions.toggle | `(value: T) => void` | 요소가 있으면 삭제, 없으면 추가 |
+| set | `Set<T>` | Current Set state |
+| actions.add | `(value: T) => void` | Add an element |
+| actions.delete | `(value: T) => void` | Delete an element |
+| actions.clear | `() => void` | Delete all elements |
+| actions.reset | `() => void` | Reset to the initial value |
+| actions.toggle | `(value: T) => void` | Remove the element if it exists; add it if it does not |
 
 ## Usage
 

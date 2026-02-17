@@ -1,6 +1,6 @@
 # useStateHistory
 
-Undo/Redo를 지원하는 상태 관리 hook입니다.
+A state management hook with Undo/Redo support.
 
 ## API
 
@@ -12,19 +12,19 @@ function useStateHistory<T>(initialValue: T): UseStateHistoryReturn<T>
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| initialValue | `T` | - | 초기 상태 값 |
+| initialValue | `T` | - | Initial state value |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| value | `T` | 현재 상태 |
-| set | `(value: T) => void` | 새 값 설정 (redo 스택 초기화) |
-| undo | `() => void` | 이전 상태로 복원 |
-| redo | `() => void` | 다음 상태로 복원 |
-| canUndo | `boolean` | undo 가능 여부 |
-| canRedo | `boolean` | redo 가능 여부 |
-| history | `T[]` | 전체 상태 기록 |
+| value | `T` | Current state |
+| set | `(value: T) => void` | Set a new value (clears the redo stack) |
+| undo | `() => void` | Restore the previous state |
+| redo | `() => void` | Restore the next state |
+| canUndo | `boolean` | Whether undo is available |
+| canRedo | `boolean` | Whether redo is available |
+| history | `T[]` | Full state history |
 
 ## Usage
 
@@ -46,4 +46,4 @@ function TextEditor() {
 
 ## Notes
 
-- 새 값을 설정하면 redo 스택이 초기화됩니다.
+- Setting a new value clears the redo stack.

@@ -1,6 +1,6 @@
 # useMount
 
-컴포넌트 마운트 시 콜백을 실행합니다.
+Executes a callback when the component mounts.
 
 ## API
 
@@ -12,7 +12,7 @@ function useMount(callback: () => void): void
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| callback | `() => void` | - | 마운트 시 실행할 함수 |
+| callback | `() => void` | - | The function to execute on mount |
 
 ### Returns
 

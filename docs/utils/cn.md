@@ -1,6 +1,6 @@
 # cn
 
-Tailwind CSS 클래스를 조건부로 병합합니다.
+Conditionally merges Tailwind CSS classes.
 
 ## API
 
@@ -12,13 +12,13 @@ function cn(...inputs: ClassValue[]): string
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| ...inputs | `ClassValue[]` | - | 클래스 값 (문자열, 객체, 배열 등) |
+| ...inputs | `ClassValue[]` | - | Class values (strings, objects, arrays, etc.) |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `string` | 병합된 클래스 문자열 |
+| `string` | Merged class string |
 
 ## Usage
 
@@ -40,13 +40,13 @@ function Button({ variant, className }: { variant: 'primary' | 'secondary'; clas
   )
 }
 
-// Tailwind 충돌 자동 해결
+// Automatic Tailwind conflict resolution
 cn('px-2 py-1', 'px-4') // → 'py-1 px-4'
 cn('text-red-500', 'text-blue-500') // → 'text-blue-500'
 ```
 
 ## Notes
 
-- 내부적으로 `clsx` + `tailwind-merge`를 사용합니다.
-- Tailwind CSS 클래스 충돌을 자동으로 해결합니다 (뒤에 오는 값 우선).
-- 조건부 클래스, 배열, 객체 구문을 모두 지원합니다.
+- Uses `clsx` + `tailwind-merge` internally.
+- Automatically resolves Tailwind CSS class conflicts (later values take precedence).
+- Supports conditional classes, arrays, and object syntax.

@@ -1,6 +1,6 @@
 # useCopyToClipboard
 
-텍스트를 클립보드에 복사합니다.
+Copies text to the clipboard.
 
 ## API
 
@@ -10,14 +10,14 @@ function useCopyToClipboard(): UseCopyToClipboardReturn
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| copiedText | `string \| null` | 마지막으로 복사된 텍스트 |
-| copy | `(text: string) => Promise<boolean>` | 복사 함수 (성공 여부 반환) |
+| copiedText | `string \| null` | The last copied text |
+| copy | `(text: string) => Promise<boolean>` | Copy function (returns whether it succeeded) |
 
 ## Usage
 
@@ -37,5 +37,5 @@ function CopyButton({ text }: { text: string }) {
 
 ## Notes
 
-- `navigator.clipboard` API를 사용합니다.
-- Clipboard API를 지원하지 않는 환경에서는 `false`를 반환합니다.
+- Uses the `navigator.clipboard` API.
+- Returns `false` in environments that do not support the Clipboard API.

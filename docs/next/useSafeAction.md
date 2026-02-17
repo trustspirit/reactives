@@ -1,6 +1,6 @@
 # useSafeAction
 
-Server Action을 안전하게 실행합니다.
+Safely executes a Server Action.
 
 ## API
 
@@ -14,17 +14,17 @@ function useSafeAction<TInput, TOutput>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| action | `(input: TInput) => Promise<TOutput>` | - | 실행할 Server Action |
+| action | `(input: TInput) => Promise<TOutput>` | - | The Server Action to execute |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| execute | `(input: TInput) => void` | 액션 실행 함수 |
-| data | `TOutput \| null` | 실행 결과 |
-| error | `Error \| null` | 에러 객체 |
-| loading | `boolean` | 실행 중 여부 |
-| reset | `() => void` | 상태 초기화 |
+| execute | `(input: TInput) => void` | Function to execute the action |
+| data | `TOutput \| null` | Execution result |
+| error | `Error \| null` | Error object |
+| loading | `boolean` | Whether the action is executing |
+| reset | `() => void` | Reset state |
 
 ## Usage
 
@@ -58,6 +58,6 @@ function CreatePostForm() {
 
 ## Notes
 
-- `'use client'` 컴포넌트에서만 사용 가능합니다.
-- 내부적으로 `useTransition`을 사용하여 UI 블로킹을 방지합니다.
-- 타입 안전한 입력/출력을 제공합니다.
+- Can only be used in `'use client'` components.
+- Uses `useTransition` internally to prevent UI blocking.
+- Provides type-safe input/output.

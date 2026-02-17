@@ -1,6 +1,6 @@
 # useWindowSize
 
-브라우저 창의 크기를 추적합니다.
+Tracks the size of the browser window.
 
 ## API
 
@@ -10,7 +10,7 @@ function useWindowSize(): { width: number; height: number }
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
@@ -37,4 +37,4 @@ function WindowInfo() {
 
 ## Notes
 
-- SSR 환경에서는 `{ width: 0, height: 0 }`을 반환합니다.
+- Returns `{ width: 0, height: 0 }` in SSR environments.

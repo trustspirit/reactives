@@ -1,6 +1,6 @@
 # useMap
 
-Map 자료구조의 상태를 관리합니다.
+Manages the state of a Map data structure.
 
 ## API
 
@@ -14,20 +14,20 @@ function useMap<K, V>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| initialValue | `Iterable<[K, V]>` | `[]` | 초기 Map 엔트리 |
+| initialValue | `Iterable<[K, V]>` | `[]` | Initial Map entries |
 
 ### Returns
 
-`[map, actions]` 튜플을 반환합니다.
+Returns a `[map, actions]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| map | `Map<K, V>` | 현재 Map 상태 |
-| actions.set | `(key: K, value: V) => void` | 엔트리 추가/수정 |
-| actions.setAll | `(entries: Iterable<[K, V]>) => void` | 여러 엔트리 일괄 설정 |
-| actions.delete | `(key: K) => void` | 엔트리 삭제 |
-| actions.clear | `() => void` | 모든 엔트리 삭제 |
-| actions.reset | `() => void` | 초기값으로 리셋 |
+| map | `Map<K, V>` | Current Map state |
+| actions.set | `(key: K, value: V) => void` | Add or update an entry |
+| actions.setAll | `(entries: Iterable<[K, V]>) => void` | Set multiple entries at once |
+| actions.delete | `(key: K) => void` | Delete an entry |
+| actions.clear | `() => void` | Delete all entries |
+| actions.reset | `() => void` | Reset to the initial value |
 
 ## Usage
 

@@ -1,6 +1,6 @@
 # useIsServer
 
-서버/클라이언트 렌더링 환경을 감지합니다.
+Detects the server/client rendering environment.
 
 ## API
 
@@ -10,13 +10,13 @@ function useIsServer(): boolean
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `boolean` | 서버에서 렌더링 중이면 `true`, 클라이언트에서는 `false` |
+| `boolean` | `true` if rendering on the server, `false` on the client |
 
 ## Usage
 
@@ -36,6 +36,6 @@ function ServerAwareComponent() {
 
 ## Notes
 
-- `useSyncExternalStore`를 사용하여 hydration mismatch를 방지합니다.
-- `'use client'` 없이도 사용 가능합니다.
-- 잘못된 컨텐츠 깜빡임(flash)이 발생하지 않습니다.
+- Uses `useSyncExternalStore` to prevent hydration mismatch.
+- Can be used without `'use client'`.
+- Does not cause incorrect content flash.

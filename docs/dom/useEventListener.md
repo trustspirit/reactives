@@ -1,6 +1,6 @@
 # useEventListener
 
-타입 안전한 이벤트 리스너를 등록합니다.
+Registers a type-safe event listener.
 
 ## API
 
@@ -17,10 +17,10 @@ function useEventListener<K extends keyof EventMap>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| eventName | `K` | - | 이벤트 이름 (전체 타입 지원) |
-| handler | `(event: EventMap[K]) => void` | - | 이벤트 핸들러 |
-| element | `RefObject<HTMLElement \| null>` | `window` | 대상 요소 (기본: window) |
-| options | `boolean \| AddEventListenerOptions` | - | addEventListener 옵션 |
+| eventName | `K` | - | Event name (full type support) |
+| handler | `(event: EventMap[K]) => void` | - | Event handler |
+| element | `RefObject<HTMLElement \| null>` | `window` | Target element (default: window) |
+| options | `boolean \| AddEventListenerOptions` | - | addEventListener options |
 
 ### Returns
 
@@ -34,12 +34,12 @@ import { useEventListener } from 'reactives-hooks'
 function Component() {
   const ref = useRef<HTMLDivElement>(null)
 
-  // Window 이벤트
+  // Window event
   useEventListener('keydown', (e) => {
     console.log('Key pressed:', e.key)
   })
 
-  // Element 이벤트
+  // Element event
   useEventListener('click', (e) => {
     console.log('Clicked at:', e.clientX, e.clientY)
   }, ref)
@@ -50,5 +50,5 @@ function Component() {
 
 ## Notes
 
-- 핸들러는 항상 최신 참조를 캡처합니다 (stale closure 문제 없음).
-- 컴포넌트 언마운트 시 자동으로 정리됩니다.
+- The handler always captures the latest reference (no stale closure issues).
+- Automatically cleaned up when the component unmounts.

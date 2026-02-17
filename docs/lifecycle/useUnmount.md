@@ -1,6 +1,6 @@
 # useUnmount
 
-컴포넌트 언마운트 시 콜백을 실행합니다.
+Executes a callback when the component unmounts.
 
 ## API
 
@@ -12,7 +12,7 @@ function useUnmount(callback: () => void): void
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| callback | `() => void` | - | 언마운트 시 실행할 함수 |
+| callback | `() => void` | - | The function to execute on unmount |
 
 ### Returns
 
@@ -41,4 +41,4 @@ function Timer() {
 
 ## Notes
 
-- 콜백은 항상 최신 참조를 캡처합니다 (stale closure 문제 없음).
+- The callback always captures the latest reference (no stale closure issues).

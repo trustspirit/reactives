@@ -1,6 +1,6 @@
 # useInfiniteScroll
 
-IntersectionObserver 기반의 무한 스크롤을 구현합니다.
+Implements infinite scrolling based on IntersectionObserver.
 
 ## API
 
@@ -16,18 +16,18 @@ function useInfiniteScroll(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| loadMore | `() => Promise<void>` | - | 추가 데이터를 로드하는 비동기 함수 |
-| hasMore | `boolean` | - | 더 로드할 데이터가 있는지 여부 |
-| options.threshold | `number` | `0` | 교차 임계값 |
-| options.rootMargin | `string` | `'100px'` | 트리거 거리 |
+| loadMore | `() => Promise<void>` | - | Async function to load additional data |
+| hasMore | `boolean` | - | Whether there is more data to load |
+| options.threshold | `number` | `0` | Intersection threshold |
+| options.rootMargin | `string` | `'100px'` | Trigger distance |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| sentinelRef | `RefObject<HTMLElement \| null>` | 하단 감시 요소에 연결할 ref |
-| loading | `boolean` | 로딩 상태 |
-| reset | `() => void` | 로딩 상태 초기화 |
+| sentinelRef | `RefObject<HTMLElement \| null>` | Ref to attach to the bottom sentinel element |
+| loading | `boolean` | Loading state |
+| reset | `() => void` | Reset the loading state |
 
 ## Usage
 
@@ -59,6 +59,6 @@ function InfiniteList() {
 
 ## Notes
 
-- `sentinelRef`를 리스트 하단의 빈 요소에 연결하세요.
-- 중복 로드를 방지하는 내부 loading guard가 있습니다.
-- `rootMargin`으로 트리거 거리를 조절할 수 있습니다 (기본: 100px 전에 미리 로드).
+- Attach `sentinelRef` to an empty element at the bottom of the list.
+- Has an internal loading guard to prevent duplicate loads.
+- Use `rootMargin` to adjust the trigger distance (default: preloads 100px before reaching the bottom).

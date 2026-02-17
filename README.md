@@ -44,7 +44,7 @@ function App() {
 
 #### [`useToggle`](./docs/state/useToggle.md)
 
-Boolean 값을 토글합니다.
+Toggles a boolean value.
 
 ```tsx
 const [isOpen, toggle] = useToggle(false)
@@ -54,7 +54,7 @@ toggle(false) // false
 
 #### [`useBoolean`](./docs/state/useBoolean.md)
 
-명시적인 boolean 제어 메서드를 제공합니다.
+Provides explicit boolean control methods.
 
 ```tsx
 const { value: isOpen, setTrue: open, setFalse: close, toggle } = useBoolean(false)
@@ -62,7 +62,7 @@ const { value: isOpen, setTrue: open, setFalse: close, toggle } = useBoolean(fal
 
 #### [`useCounter`](./docs/state/useCounter.md)
 
-min/max 범위를 지원하는 숫자 카운터입니다.
+Numeric counter with min/max bounds.
 
 ```tsx
 const [count, { increment, decrement, reset }] = useCounter(0, { min: 0, max: 100 })
@@ -70,7 +70,7 @@ const [count, { increment, decrement, reset }] = useCounter(0, { min: 0, max: 10
 
 #### [`useMap`](./docs/state/useMap.md)
 
-Map 자료구조의 상태를 관리합니다.
+Manages Map data structure state.
 
 ```tsx
 const [map, { set, delete: remove, clear }] = useMap<string, string>([['key', 'value']])
@@ -78,7 +78,7 @@ const [map, { set, delete: remove, clear }] = useMap<string, string>([['key', 'v
 
 #### [`useSet`](./docs/state/useSet.md)
 
-Set 자료구조의 상태를 관리합니다.
+Manages Set data structure state.
 
 ```tsx
 const [set, { add, toggle, clear }] = useSet<string>(['react'])
@@ -86,7 +86,7 @@ const [set, { add, toggle, clear }] = useSet<string>(['react'])
 
 #### [`usePrevious`](./docs/state/usePrevious.md)
 
-이전 렌더의 값을 반환합니다.
+Returns the value from the previous render.
 
 ```tsx
 const prevCount = usePrevious(count) // undefined on first render
@@ -94,7 +94,7 @@ const prevCount = usePrevious(count) // undefined on first render
 
 #### [`useStateHistory`](./docs/state/useStateHistory.md)
 
-Undo/Redo를 지원하는 상태 관리 hook입니다.
+State management with undo/redo support.
 
 ```tsx
 const { value, set, undo, redo, canUndo, canRedo } = useStateHistory('')
@@ -104,7 +104,7 @@ const { value, set, undo, redo, canUndo, canRedo } = useStateHistory('')
 
 #### [`useLocalStorage`](./docs/storage/useLocalStorage.md)
 
-localStorage와 동기화되는 상태를 관리합니다.
+Manages state synced with localStorage.
 
 ```tsx
 const [theme, setTheme, removeTheme] = useLocalStorage('theme', 'light')
@@ -112,7 +112,7 @@ const [theme, setTheme, removeTheme] = useLocalStorage('theme', 'light')
 
 #### [`useSessionStorage`](./docs/storage/useSessionStorage.md)
 
-sessionStorage와 동기화되는 상태를 관리합니다.
+Manages state synced with sessionStorage.
 
 ```tsx
 const [draft, setDraft, clearDraft] = useSessionStorage('form-draft', '')
@@ -122,7 +122,7 @@ const [draft, setDraft, clearDraft] = useSessionStorage('form-draft', '')
 
 #### [`useEventListener`](./docs/dom/useEventListener.md)
 
-타입 안전한 이벤트 리스너를 등록합니다.
+Registers a type-safe event listener.
 
 ```tsx
 useEventListener('keydown', (e) => console.log(e.key))
@@ -131,7 +131,7 @@ useEventListener('click', handler, elementRef)
 
 #### [`useClickOutside`](./docs/dom/useClickOutside.md)
 
-요소 외부 클릭을 감지합니다.
+Detects clicks outside an element.
 
 ```tsx
 const ref = useClickOutside<HTMLDivElement>(() => setIsOpen(false))
@@ -139,7 +139,7 @@ const ref = useClickOutside<HTMLDivElement>(() => setIsOpen(false))
 
 #### [`useHover`](./docs/dom/useHover.md)
 
-요소의 hover 상태를 추적합니다.
+Tracks hover state of an element.
 
 ```tsx
 const [hoverRef, isHovered] = useHover<HTMLDivElement>()
@@ -147,7 +147,7 @@ const [hoverRef, isHovered] = useHover<HTMLDivElement>()
 
 #### [`useIntersectionObserver`](./docs/dom/useIntersectionObserver.md)
 
-요소의 뷰포트 교차를 감지합니다.
+Detects viewport intersection of an element.
 
 ```tsx
 const { ref, isIntersecting } = useIntersectionObserver({ freezeOnceVisible: true })
@@ -155,7 +155,7 @@ const { ref, isIntersecting } = useIntersectionObserver({ freezeOnceVisible: tru
 
 #### [`useResizeObserver`](./docs/dom/useResizeObserver.md)
 
-요소의 크기 변화를 감지합니다.
+Detects element size changes.
 
 ```tsx
 const [ref, { width, height }] = useResizeObserver<HTMLDivElement>()
@@ -163,7 +163,7 @@ const [ref, { width, height }] = useResizeObserver<HTMLDivElement>()
 
 #### [`useMutationObserver`](./docs/dom/useMutationObserver.md)
 
-DOM 변경을 감지합니다.
+Detects DOM mutations.
 
 ```tsx
 const ref = useMutationObserver((mutations) => { /* ... */ })
@@ -173,7 +173,7 @@ const ref = useMutationObserver((mutations) => { /* ... */ })
 
 #### [`useMediaQuery`](./docs/sensor/useMediaQuery.md)
 
-CSS 미디어 쿼리의 매칭 상태를 추적합니다.
+Tracks CSS media query match state.
 
 ```tsx
 const isMobile = useMediaQuery('(max-width: 768px)')
@@ -181,7 +181,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 
 #### [`useWindowSize`](./docs/sensor/useWindowSize.md)
 
-브라우저 창의 크기를 추적합니다.
+Tracks browser window dimensions.
 
 ```tsx
 const { width, height } = useWindowSize()
@@ -189,7 +189,7 @@ const { width, height } = useWindowSize()
 
 #### [`useScroll`](./docs/sensor/useScroll.md)
 
-스크롤 위치를 추적합니다.
+Tracks scroll position.
 
 ```tsx
 const { x, y } = useScroll()
@@ -197,7 +197,7 @@ const { x, y } = useScroll()
 
 #### [`useMouse`](./docs/sensor/useMouse.md)
 
-마우스 커서 위치를 추적합니다.
+Tracks mouse cursor position.
 
 ```tsx
 const { x, y } = useMouse()
@@ -205,7 +205,7 @@ const { x, y } = useMouse()
 
 #### [`useNetwork`](./docs/sensor/useNetwork.md)
 
-네트워크 상태와 연결 정보를 추적합니다.
+Tracks network status and connection info.
 
 ```tsx
 const { online, effectiveType, downlink } = useNetwork()
@@ -215,7 +215,7 @@ const { online, effectiveType, downlink } = useNetwork()
 
 #### [`useDebounceValue`](./docs/performance/useDebounceValue.md)
 
-값의 변경을 지연시킵니다 (debounce).
+Debounces a value update.
 
 ```tsx
 const debouncedSearch = useDebounceValue(search, 300)
@@ -223,7 +223,7 @@ const debouncedSearch = useDebounceValue(search, 300)
 
 #### [`useDebounceCallback`](./docs/performance/useDebounceCallback.md)
 
-콜백 함수의 실행을 지연시킵니다 (debounce).
+Debounces a callback function.
 
 ```tsx
 const save = useDebounceCallback((content: string) => api.save(content), 1000)
@@ -231,7 +231,7 @@ const save = useDebounceCallback((content: string) => api.save(content), 1000)
 
 #### [`useThrottleValue`](./docs/performance/useThrottleValue.md)
 
-값의 업데이트 빈도를 제한합니다 (throttle).
+Throttles a value update.
 
 ```tsx
 const throttledY = useThrottleValue(scrollY, 100)
@@ -239,7 +239,7 @@ const throttledY = useThrottleValue(scrollY, 100)
 
 #### [`useThrottleCallback`](./docs/performance/useThrottleCallback.md)
 
-콜백 함수의 실행 빈도를 제한합니다 (throttle).
+Throttles a callback function.
 
 ```tsx
 const track = useThrottleCallback((x, y) => analytics.track(x, y), 200)
@@ -249,7 +249,7 @@ const track = useThrottleCallback((x, y) => analytics.track(x, y), 200)
 
 #### [`useMount`](./docs/lifecycle/useMount.md)
 
-컴포넌트 마운트 시 콜백을 실행합니다.
+Runs a callback on component mount.
 
 ```tsx
 useMount(() => analytics.pageView())
@@ -257,7 +257,7 @@ useMount(() => analytics.pageView())
 
 #### [`useUnmount`](./docs/lifecycle/useUnmount.md)
 
-컴포넌트 언마운트 시 콜백을 실행합니다.
+Runs a callback on component unmount.
 
 ```tsx
 useUnmount(() => clearInterval(timer))
@@ -265,7 +265,7 @@ useUnmount(() => clearInterval(timer))
 
 #### [`useUpdateEffect`](./docs/lifecycle/useUpdateEffect.md)
 
-첫 번째 렌더를 건너뛰는 useEffect입니다.
+A useEffect that skips the first render.
 
 ```tsx
 useUpdateEffect(() => {
@@ -275,7 +275,7 @@ useUpdateEffect(() => {
 
 #### [`useIsMounted`](./docs/lifecycle/useIsMounted.md)
 
-컴포넌트의 마운트 상태를 확인합니다.
+Checks component mount status.
 
 ```tsx
 const isMounted = useIsMounted()
@@ -284,7 +284,7 @@ if (isMounted()) setData(result)
 
 #### [`useIsomorphicLayoutEffect`](./docs/lifecycle/useIsomorphicLayoutEffect.md)
 
-SSR에서 안전한 useLayoutEffect입니다.
+SSR-safe useLayoutEffect.
 
 ```tsx
 useIsomorphicLayoutEffect(() => {
@@ -294,7 +294,7 @@ useIsomorphicLayoutEffect(() => {
 
 #### [`useDeepCompareEffect`](./docs/lifecycle/useDeepCompareEffect.md)
 
-의존성을 깊은 비교(deep comparison)하는 useEffect입니다.
+A useEffect with deep comparison of dependencies.
 
 ```tsx
 useDeepCompareEffect(() => {
@@ -306,7 +306,7 @@ useDeepCompareEffect(() => {
 
 #### [`useScrollLock`](./docs/ui/useScrollLock.md)
 
-body 스크롤을 잠급니다.
+Locks body scroll.
 
 ```tsx
 useScrollLock(isModalOpen)
@@ -314,7 +314,7 @@ useScrollLock(isModalOpen)
 
 #### [`useDarkMode`](./docs/ui/useDarkMode.md)
 
-시스템 환경설정을 지원하는 다크 모드를 관리합니다.
+Manages dark mode with system preference support.
 
 ```tsx
 const { isDark, theme, setTheme, toggle } = useDarkMode('system')
@@ -322,7 +322,7 @@ const { isDark, theme, setTheme, toggle } = useDarkMode('system')
 
 #### [`useFullscreen`](./docs/ui/useFullscreen.md)
 
-Fullscreen API를 래핑합니다.
+Wraps the Fullscreen API.
 
 ```tsx
 const { ref, isFullscreen, toggle } = useFullscreen()
@@ -330,7 +330,7 @@ const { ref, isFullscreen, toggle } = useFullscreen()
 
 #### [`useCopyToClipboard`](./docs/ui/useCopyToClipboard.md)
 
-텍스트를 클립보드에 복사합니다.
+Copies text to the clipboard.
 
 ```tsx
 const { copiedText, copy } = useCopyToClipboard()
@@ -339,7 +339,7 @@ await copy('Hello!')
 
 #### [`useHotkeys`](./docs/ui/useHotkeys.md)
 
-키보드 단축키를 바인딩합니다.
+Binds keyboard shortcuts.
 
 ```tsx
 useHotkeys('ctrl+s', () => save())
@@ -350,7 +350,7 @@ useHotkeys('cmd+k', () => openPalette())
 
 #### [`useAsync`](./docs/data/useAsync.md)
 
-비동기 함수를 loading/error 상태와 함께 래핑합니다.
+Wraps an async function with loading/error states.
 
 ```tsx
 const { data, loading, error, execute } = useAsync(() => fetchUser(id))
@@ -358,7 +358,7 @@ const { data, loading, error, execute } = useAsync(() => fetchUser(id))
 
 #### [`useFetch`](./docs/data/useFetch.md)
 
-abort 지원이 포함된 fetch 래퍼입니다.
+Fetch wrapper with abort support.
 
 ```tsx
 const { data, loading, error, refetch } = useFetch<Post[]>('/api/posts')
@@ -366,7 +366,7 @@ const { data, loading, error, refetch } = useFetch<Post[]>('/api/posts')
 
 #### [`useInfiniteScroll`](./docs/data/useInfiniteScroll.md)
 
-IntersectionObserver 기반의 무한 스크롤을 구현합니다.
+IntersectionObserver-based infinite scroll.
 
 ```tsx
 const { sentinelRef, loading } = useInfiniteScroll(loadMore, hasMore)
@@ -374,7 +374,7 @@ const { sentinelRef, loading } = useInfiniteScroll(loadMore, hasMore)
 
 #### [`usePagination`](./docs/data/usePagination.md)
 
-페이지네이션 로직을 관리합니다.
+Manages pagination logic.
 
 ```tsx
 const { page, totalPages, next, prev, hasNext } = usePagination({
@@ -387,7 +387,7 @@ const { page, totalPages, next, prev, hasNext } = usePagination({
 
 #### [`useQueryParams`](./docs/next/useQueryParams.md)
 
-타입 안전한 URL 쿼리 파라미터를 관리합니다.
+Manages type-safe URL query parameters.
 
 ```tsx
 const { params, set, delete: remove } = useQueryParams<{ q: string; sort: string }>()
@@ -396,7 +396,7 @@ set('q', 'react')
 
 #### [`useRouteChange`](./docs/next/useRouteChange.md)
 
-라우트 변경을 감지합니다.
+Detects route changes.
 
 ```tsx
 useRouteChange({ onComplete: (url) => analytics.pageView(url) })
@@ -404,7 +404,7 @@ useRouteChange({ onComplete: (url) => analytics.pageView(url) })
 
 #### [`useSafeAction`](./docs/next/useSafeAction.md)
 
-Server Action을 안전하게 실행합니다.
+Safely executes Server Actions.
 
 ```tsx
 const { execute, data, loading, error } = useSafeAction(createPost)
@@ -412,7 +412,7 @@ const { execute, data, loading, error } = useSafeAction(createPost)
 
 #### [`useIsServer`](./docs/next/useIsServer.md)
 
-서버/클라이언트 렌더링 환경을 감지합니다.
+Detects server/client rendering environment.
 
 ```tsx
 const isServer = useIsServer() // true on server, false on client
@@ -422,7 +422,7 @@ const isServer = useIsServer() // true on server, false on client
 
 #### [`cn`](./docs/utils/cn.md)
 
-Tailwind CSS 클래스를 조건부로 병합합니다.
+Conditionally merges Tailwind CSS classes.
 
 ```tsx
 cn('px-2 py-1', isActive && 'bg-blue-500', className)
@@ -430,7 +430,7 @@ cn('px-2 py-1', isActive && 'bg-blue-500', className)
 
 #### [`formatDate`](./docs/utils/formatDate.md)
 
-날짜를 로케일에 맞게 포맷합니다.
+Formats a date with locale support.
 
 ```tsx
 formatDate(new Date(), { year: 'numeric', month: 'long', day: 'numeric' }, 'ko-KR')
@@ -438,7 +438,7 @@ formatDate(new Date(), { year: 'numeric', month: 'long', day: 'numeric' }, 'ko-K
 
 #### [`sleep`](./docs/utils/sleep.md)
 
-Promise 기반의 지연 함수입니다.
+Promise-based delay function.
 
 ```tsx
 await sleep(1000) // Wait 1 second

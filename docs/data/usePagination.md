@@ -1,6 +1,6 @@
 # usePagination
 
-페이지네이션 로직을 관리합니다.
+Manages pagination logic.
 
 ## API
 
@@ -12,25 +12,25 @@ function usePagination(options: UsePaginationOptions): UsePaginationReturn
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| options.totalItems | `number` | - | 전체 항목 수 |
-| options.pageSize | `number` | `10` | 페이지당 항목 수 |
-| options.initialPage | `number` | `1` | 초기 페이지 |
+| options.totalItems | `number` | - | Total number of items |
+| options.pageSize | `number` | `10` | Number of items per page |
+| options.initialPage | `number` | `1` | Initial page |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| page | `number` | 현재 페이지 |
-| pageSize | `number` | 페이지당 항목 수 |
-| totalPages | `number` | 전체 페이지 수 |
-| hasNext | `boolean` | 다음 페이지 존재 여부 |
-| hasPrev | `boolean` | 이전 페이지 존재 여부 |
-| next | `() => void` | 다음 페이지로 이동 |
-| prev | `() => void` | 이전 페이지로 이동 |
-| setPage | `(page: number) => void` | 특정 페이지로 이동 |
-| setPageSize | `(size: number) => void` | 페이지 크기 변경 (1페이지로 리셋) |
-| startIndex | `number` | 현재 페이지 시작 인덱스 |
-| endIndex | `number` | 현재 페이지 끝 인덱스 |
+| page | `number` | Current page |
+| pageSize | `number` | Number of items per page |
+| totalPages | `number` | Total number of pages |
+| hasNext | `boolean` | Whether a next page exists |
+| hasPrev | `boolean` | Whether a previous page exists |
+| next | `() => void` | Go to the next page |
+| prev | `() => void` | Go to the previous page |
+| setPage | `(page: number) => void` | Go to a specific page |
+| setPageSize | `(size: number) => void` | Change the page size (resets to page 1) |
+| startIndex | `number` | Start index of the current page |
+| endIndex | `number` | End index of the current page |
 
 ## Usage
 
@@ -62,6 +62,6 @@ function PaginatedList({ items }: { items: Item[] }) {
 
 ## Notes
 
-- 페이지는 유효 범위(1 ~ totalPages) 내로 자동 클램핑됩니다.
-- `setPageSize` 호출 시 1페이지로 자동 리셋됩니다.
-- 데이터 fetch 없이 순수한 페이지네이션 로직만 제공합니다.
+- Pages are automatically clamped to the valid range (1 to totalPages).
+- Calling `setPageSize` automatically resets to page 1.
+- Provides pure pagination logic without data fetching.

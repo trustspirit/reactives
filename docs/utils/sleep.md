@@ -1,6 +1,6 @@
 # sleep
 
-Promise 기반의 지연 함수입니다.
+A Promise-based delay function.
 
 ## API
 
@@ -12,20 +12,20 @@ function sleep(ms: number): Promise<void>
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| ms | `number` | - | 대기 시간 (밀리초) |
+| ms | `number` | - | Wait time (in milliseconds) |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `Promise<void>` | 지정 시간 후 resolve되는 Promise |
+| `Promise<void>` | A Promise that resolves after the specified time |
 
 ## Usage
 
 ```tsx
 import { sleep } from 'reactives-hooks/utils'
 
-// 비동기 함수에서 지연
+// Delay in an async function
 async function fetchWithRetry(url: string, retries = 3) {
   for (let i = 0; i < retries; i++) {
     try {
@@ -36,7 +36,7 @@ async function fetchWithRetry(url: string, retries = 3) {
   }
 }
 
-// 테스트에서 사용
+// Usage in tests
 async function testLoading() {
   render(<LoadingComponent />)
   await sleep(500)
@@ -46,4 +46,4 @@ async function testLoading() {
 
 ## Notes
 
-- 테스트, 데모, 재시도 로직 등에 유용합니다.
+- Useful for tests, demos, retry logic, and more.

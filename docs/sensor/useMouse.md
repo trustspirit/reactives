@@ -1,6 +1,6 @@
 # useMouse
 
-마우스 커서 위치를 추적합니다.
+Tracks the mouse cursor position.
 
 ## API
 
@@ -10,14 +10,14 @@ function useMouse(): { x: number; y: number }
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| x | `number` | 커서의 X 좌표 (clientX) |
-| y | `number` | 커서의 Y 좌표 (clientY) |
+| x | `number` | X coordinate of the cursor (clientX) |
+| y | `number` | Y coordinate of the cursor (clientY) |
 
 ## Usage
 
@@ -46,5 +46,5 @@ function Cursor() {
 
 ## Notes
 
-- SSR 환경에서는 `{ x: 0, y: 0 }`을 반환합니다.
-- 뷰포트 기준 좌표(`clientX`, `clientY`)를 사용합니다.
+- Returns `{ x: 0, y: 0 }` in SSR environments.
+- Uses viewport-relative coordinates (`clientX`, `clientY`).

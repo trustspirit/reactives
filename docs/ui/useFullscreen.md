@@ -1,6 +1,6 @@
 # useFullscreen
 
-Fullscreen API를 래핑합니다.
+Wraps the Fullscreen API.
 
 ## API
 
@@ -10,17 +10,17 @@ function useFullscreen(): UseFullscreenReturn
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| ref | `RefObject<HTMLElement \| null>` | 전체 화면으로 표시할 요소에 연결할 ref |
-| isFullscreen | `boolean` | 현재 전체 화면 여부 |
-| enter | `() => Promise<void>` | 전체 화면 진입 |
-| exit | `() => Promise<void>` | 전체 화면 종료 |
-| toggle | `() => Promise<void>` | 전체 화면 토글 |
+| ref | `RefObject<HTMLElement \| null>` | Ref to attach to the element to display in fullscreen |
+| isFullscreen | `boolean` | Whether fullscreen is currently active |
+| enter | `() => Promise<void>` | Enter fullscreen |
+| exit | `() => Promise<void>` | Exit fullscreen |
+| toggle | `() => Promise<void>` | Toggle fullscreen |
 
 ## Usage
 

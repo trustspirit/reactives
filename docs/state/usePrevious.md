@@ -1,6 +1,6 @@
 # usePrevious
 
-이전 렌더의 값을 반환합니다.
+Returns the value from the previous render.
 
 ## API
 
@@ -12,13 +12,13 @@ function usePrevious<T>(value: T): T | undefined
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| value | `T` | - | 추적할 값 |
+| value | `T` | - | The value to track |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `T \| undefined` | 이전 렌더의 값. 첫 렌더에서는 `undefined` |
+| `T \| undefined` | The value from the previous render. Returns `undefined` on the first render |
 
 ## Usage
 

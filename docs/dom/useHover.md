@@ -1,6 +1,6 @@
 # useHover
 
-요소의 hover 상태를 추적합니다.
+Tracks the hover state of an element.
 
 ## API
 
@@ -13,16 +13,16 @@ function useHover<T extends HTMLElement>(): [
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
-`[callbackRef, isHovered]` 튜플을 반환합니다.
+Returns a `[callbackRef, isHovered]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| callbackRef | `(node: T \| null) => void` | 요소에 연결할 callback ref |
-| isHovered | `boolean` | 현재 hover 상태 |
+| callbackRef | `(node: T \| null) => void` | A callback ref to attach to the element |
+| isHovered | `boolean` | Current hover state |
 
 ## Usage
 
@@ -46,4 +46,4 @@ function HoverCard() {
 
 ## Notes
 
-- Callback ref 패턴을 사용하므로 동적으로 변경되는 요소에도 안전합니다.
+- Uses the callback ref pattern, so it is safe to use with dynamically changing elements.

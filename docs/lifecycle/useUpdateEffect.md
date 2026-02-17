@@ -1,6 +1,6 @@
 # useUpdateEffect
 
-첫 번째 렌더를 건너뛰는 useEffect입니다.
+A useEffect that skips the first render.
 
 ## API
 
@@ -15,8 +15,8 @@ function useUpdateEffect(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| effect | `EffectCallback` | - | 실행할 이펙트 함수 |
-| deps | `DependencyList` | - | 의존성 배열 |
+| effect | `EffectCallback` | - | The effect function to execute |
+| deps | `DependencyList` | - | Dependency array |
 
 ### Returns
 
@@ -30,7 +30,7 @@ import { useUpdateEffect } from 'reactives-hooks'
 function SearchResults({ query }: { query: string }) {
   const [results, setResults] = useState([])
 
-  // 첫 렌더에서는 실행되지 않고, query가 변경될 때만 실행
+  // Does not run on the first render; only runs when query changes
   useUpdateEffect(() => {
     fetchResults(query).then(setResults)
   }, [query])
@@ -41,4 +41,4 @@ function SearchResults({ query }: { query: string }) {
 
 ## Notes
 
-- 초기 데이터 fetch 등 마운트 시 실행이 불필요한 경우에 유용합니다.
+- Useful when execution on mount is unnecessary, such as for initial data fetching.

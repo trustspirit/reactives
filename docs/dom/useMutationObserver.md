@@ -1,6 +1,6 @@
 # useMutationObserver
 
-DOM 변경을 감지합니다.
+Detects DOM changes.
 
 ## API
 
@@ -15,14 +15,14 @@ function useMutationObserver(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| callback | `MutationCallback` | - | DOM 변경 시 실행할 콜백 |
-| options | `MutationObserverInit` | `{ childList: true, subtree: true }` | 관찰 옵션 |
+| callback | `MutationCallback` | - | Callback to execute on DOM changes |
+| options | `MutationObserverInit` | `{ childList: true, subtree: true }` | Observer options |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `RefObject<HTMLElement \| null>` | 관찰할 요소에 연결할 ref |
+| `RefObject<HTMLElement \| null>` | A ref to attach to the element to observe |
 
 ## Usage
 
@@ -42,5 +42,5 @@ function DomWatcher() {
 
 ## Notes
 
-- 기본적으로 `childList`와 `subtree` 변경을 감지합니다.
-- 콜백은 항상 최신 참조를 캡처합니다.
+- By default, detects `childList` and `subtree` changes.
+- The callback always captures the latest reference.

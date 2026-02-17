@@ -1,6 +1,6 @@
 # useNetwork
 
-네트워크 상태와 연결 정보를 추적합니다.
+Tracks network status and connection information.
 
 ## API
 
@@ -10,17 +10,17 @@ function useNetwork(): NetworkState
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| online | `boolean` | 온라인 여부 |
-| downlink | `number \| undefined` | 예상 다운로드 속도 (Mbps) |
-| effectiveType | `string \| undefined` | 연결 유형 (`'4g'`, `'3g'`, `'2g'`, `'slow-2g'`) |
-| rtt | `number \| undefined` | 왕복 시간 (ms) |
-| saveData | `boolean \| undefined` | 데이터 절약 모드 활성화 여부 |
+| online | `boolean` | Whether the browser is online |
+| downlink | `number \| undefined` | Estimated download speed (Mbps) |
+| effectiveType | `string \| undefined` | Connection type (`'4g'`, `'3g'`, `'2g'`, `'slow-2g'`) |
+| rtt | `number \| undefined` | Round-trip time (ms) |
+| saveData | `boolean \| undefined` | Whether data saver mode is enabled |
 
 ## Usage
 
@@ -30,12 +30,12 @@ import { useNetwork } from 'reactives-hooks'
 function NetworkStatus() {
   const { online, effectiveType, downlink } = useNetwork()
 
-  if (!online) return <div className="offline-banner">오프라인 상태입니다</div>
+  if (!online) return <div className="offline-banner">You are offline</div>
 
   return (
     <div>
-      <p>연결: {effectiveType}</p>
-      <p>속도: {downlink} Mbps</p>
+      <p>Connection: {effectiveType}</p>
+      <p>Speed: {downlink} Mbps</p>
     </div>
   )
 }
@@ -43,5 +43,5 @@ function NetworkStatus() {
 
 ## Notes
 
-- SSR 환경에서는 `{ online: true }`를 반환합니다.
-- `downlink`, `effectiveType`, `rtt`, `saveData`는 Network Information API를 지원하는 브라우저에서만 사용 가능합니다.
+- Returns `{ online: true }` in SSR environments.
+- `downlink`, `effectiveType`, `rtt`, and `saveData` are only available in browsers that support the Network Information API.

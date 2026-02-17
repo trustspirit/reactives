@@ -1,6 +1,6 @@
 # useIsMounted
 
-컴포넌트의 마운트 상태를 확인합니다.
+Checks the mounted state of a component.
 
 ## API
 
@@ -10,13 +10,13 @@ function useIsMounted(): () => boolean
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `() => boolean` | 현재 마운트 상태를 반환하는 함수 |
+| `() => boolean` | A function that returns the current mounted state |
 
 ## Usage
 
@@ -41,5 +41,5 @@ function AsyncComponent() {
 
 ## Notes
 
-- 비동기 작업 완료 후 언마운트된 컴포넌트에 상태 업데이트를 방지합니다.
-- 안정적인 참조를 위해 함수를 반환합니다.
+- Prevents state updates on unmounted components after asynchronous operations complete.
+- Returns a function for a stable reference.

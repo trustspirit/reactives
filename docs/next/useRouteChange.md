@@ -1,6 +1,6 @@
 # useRouteChange
 
-라우트 변경을 감지합니다.
+Detects route changes.
 
 ## API
 
@@ -12,7 +12,7 @@ function useRouteChange(callbacks: UseRouteChangeCallbacks): void
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| callbacks.onComplete | `(url: string) => void` | - | 라우트 변경 완료 시 콜백 |
+| callbacks.onComplete | `(url: string) => void` | - | Callback invoked when a route change completes |
 
 ### Returns
 
@@ -37,6 +37,6 @@ function Analytics() {
 
 ## Notes
 
-- `'use client'` 컴포넌트에서만 사용 가능합니다.
-- URL에 쿼리 파라미터가 포함됩니다.
-- pathname과 search를 포함한 전체 URL을 비교합니다.
+- Can only be used in `'use client'` components.
+- The URL includes query parameters.
+- Compares the full URL including pathname and search.

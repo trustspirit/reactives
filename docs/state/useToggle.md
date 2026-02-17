@@ -1,6 +1,6 @@
 # useToggle
 
-Boolean 값을 토글합니다.
+Toggles a boolean value.
 
 ## API
 
@@ -12,16 +12,16 @@ function useToggle(initialValue?: boolean): [boolean, (value?: boolean) => void]
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| initialValue | `boolean` | `false` | 초기 토글 상태 |
+| initialValue | `boolean` | `false` | Initial toggle state |
 
 ### Returns
 
-`[value, toggle]` 튜플을 반환합니다.
+Returns a `[value, toggle]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| value | `boolean` | 현재 상태 |
-| toggle | `(value?: boolean) => void` | 인자 없이 호출하면 토글, boolean을 전달하면 해당 값으로 설정 |
+| value | `boolean` | Current state |
+| toggle | `(value?: boolean) => void` | Toggles when called without arguments; sets to the given value when a boolean is passed |
 
 ## Usage
 

@@ -1,6 +1,6 @@
 # useThrottleValue
 
-값의 업데이트 빈도를 제한합니다 (throttle).
+Limits the update frequency of a value (throttle).
 
 ## API
 
@@ -12,14 +12,14 @@ function useThrottleValue<T>(value: T, interval: number): T
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| value | `T` | - | 쓰로틀할 값 |
-| interval | `number` | - | 최소 업데이트 간격 (ms) |
+| value | `T` | - | The value to throttle |
+| interval | `number` | - | Minimum update interval (ms) |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `T` | 쓰로틀된 값. 최대 `interval` ms마다 한 번 업데이트 |
+| `T` | The throttled value. Updates at most once every `interval` ms |
 
 ## Usage
 
@@ -36,5 +36,5 @@ function ScrollTracker() {
 
 ## Notes
 
-- 연속적인 이벤트(scroll, resize 등)에서의 성능 최적화에 적합합니다.
-- 마지막 값이 반영되도록 interval 종료 후 최종 업데이트를 스케줄링합니다.
+- Ideal for performance optimization with continuous events (scroll, resize, etc.).
+- Schedules a final update after the interval ends to ensure the latest value is reflected.

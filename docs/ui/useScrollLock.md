@@ -1,6 +1,6 @@
 # useScrollLock
 
-body 스크롤을 잠급니다.
+Locks body scroll.
 
 ## API
 
@@ -12,7 +12,7 @@ function useScrollLock(locked: boolean): void
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| locked | `boolean` | - | 스크롤 잠금 여부 |
+| locked | `boolean` | - | Whether to lock scrolling |
 
 ### Returns
 
@@ -41,5 +41,5 @@ function Modal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
 
 ## Notes
 
-- 스크롤바 너비만큼 padding을 추가하여 레이아웃 흔들림을 방지합니다.
-- 잠금 해제 시 원래 스타일로 복원됩니다.
+- Adds padding equal to the scrollbar width to prevent layout shift.
+- Restores the original styles when the lock is released.

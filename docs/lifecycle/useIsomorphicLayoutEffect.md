@@ -1,6 +1,6 @@
 # useIsomorphicLayoutEffect
 
-SSR에서 안전한 useLayoutEffect입니다.
+A useLayoutEffect that is safe for SSR.
 
 ## API
 
@@ -10,12 +10,12 @@ const useIsomorphicLayoutEffect: typeof useLayoutEffect | typeof useEffect
 
 ### Parameters
 
-`useLayoutEffect` / `useEffect`와 동일합니다.
+Same as `useLayoutEffect` / `useEffect`.
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| effect | `EffectCallback` | - | 실행할 이펙트 함수 |
-| deps | `DependencyList` | - | 의존성 배열 |
+| effect | `EffectCallback` | - | The effect function to execute |
+| deps | `DependencyList` | - | Dependency array |
 
 ### Returns
 
@@ -42,5 +42,5 @@ function MeasureElement() {
 
 ## Notes
 
-- 브라우저에서는 `useLayoutEffect`, 서버에서는 `useEffect`를 사용합니다.
-- SSR 시 "useLayoutEffect does nothing on the server" 경고를 방지합니다.
+- Uses `useLayoutEffect` in the browser and `useEffect` on the server.
+- Prevents the "useLayoutEffect does nothing on the server" warning during SSR.

@@ -1,6 +1,6 @@
 # useIntersectionObserver
 
-요소의 뷰포트 교차를 감지합니다.
+Detects viewport intersection of an element.
 
 ## API
 
@@ -14,18 +14,18 @@ function useIntersectionObserver(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| options.threshold | `number \| number[]` | `0` | 교차 비율 임계값 |
-| options.root | `Element \| null` | `null` | 루트 요소 |
-| options.rootMargin | `string` | `'0px'` | 루트 마진 |
-| options.freezeOnceVisible | `boolean` | `false` | 최초 교차 후 관찰 중단 |
+| options.threshold | `number \| number[]` | `0` | Intersection ratio threshold |
+| options.root | `Element \| null` | `null` | Root element |
+| options.rootMargin | `string` | `'0px'` | Root margin |
+| options.freezeOnceVisible | `boolean` | `false` | Stop observing after first intersection |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| ref | `RefObject<HTMLElement \| null>` | 관찰할 요소에 연결할 ref |
-| isIntersecting | `boolean` | 현재 교차 상태 |
-| entry | `IntersectionObserverEntry \| null` | 전체 교차 정보 |
+| ref | `RefObject<HTMLElement \| null>` | A ref to attach to the element to observe |
+| isIntersecting | `boolean` | Current intersection state |
+| entry | `IntersectionObserverEntry \| null` | Full intersection information |
 
 ## Usage
 
@@ -48,4 +48,4 @@ function LazyImage({ src }: { src: string }) {
 
 ## Notes
 
-- `freezeOnceVisible`은 lazy loading에 유용합니다 -- 한 번 보이면 다시 관찰하지 않습니다.
+- `freezeOnceVisible` is useful for lazy loading -- once visible, the element is no longer observed.

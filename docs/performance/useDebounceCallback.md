@@ -1,6 +1,6 @@
 # useDebounceCallback
 
-콜백 함수의 실행을 지연시킵니다 (debounce).
+Delays the execution of a callback function (debounce).
 
 ## API
 
@@ -15,14 +15,14 @@ function useDebounceCallback<T extends (...args: any[]) => any>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| callback | `T` | - | 디바운스할 함수 |
-| delay | `number` | - | 지연 시간 (ms) |
+| callback | `T` | - | The function to debounce |
+| delay | `number` | - | Delay time (ms) |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `(...args: Parameters<T>) => void` | 디바운스된 함수 |
+| `(...args: Parameters<T>) => void` | The debounced function |
 
 ## Usage
 
@@ -40,4 +40,4 @@ function AutoSave() {
 
 ## Notes
 
-- 컴포넌트 언마운트 시 타이머가 자동으로 정리됩니다.
+- The timer is automatically cleaned up when the component unmounts.

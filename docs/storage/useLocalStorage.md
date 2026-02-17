@@ -1,6 +1,6 @@
 # useLocalStorage
 
-localStorage와 동기화되는 상태를 관리합니다.
+Manages state that is synchronized with localStorage.
 
 ## API
 
@@ -15,18 +15,18 @@ function useLocalStorage<T>(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| key | `string` | - | localStorage 키 |
-| initialValue | `T` | - | 저장된 값이 없을 때 사용할 기본값 |
+| key | `string` | - | localStorage key |
+| initialValue | `T` | - | Default value to use when no stored value exists |
 
 ### Returns
 
-`[value, setValue, removeValue]` 튜플을 반환합니다.
+Returns a `[value, setValue, removeValue]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| value | `T` | 현재 저장된 값 |
-| setValue | `(value: T \| ((prev: T) => T)) => void` | 값 업데이트 (updater 함수 지원) |
-| removeValue | `() => void` | localStorage에서 값 제거 |
+| value | `T` | The currently stored value |
+| setValue | `(value: T \| ((prev: T) => T)) => void` | Updates the value (supports updater functions) |
+| removeValue | `() => void` | Removes the value from localStorage |
 
 ## Usage
 
@@ -52,6 +52,6 @@ function Settings() {
 
 ## Notes
 
-- SSR 환경에서는 `initialValue`를 반환합니다.
-- JSON 직렬화/역직렬화를 자동으로 처리합니다.
-- 다른 탭에서의 변경을 `storage` 이벤트로 감지하여 동기화합니다.
+- In SSR environments, returns `initialValue`.
+- Automatically handles JSON serialization/deserialization.
+- Detects changes from other tabs via the `storage` event and keeps state in sync.

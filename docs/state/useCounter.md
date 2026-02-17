@@ -1,6 +1,6 @@
 # useCounter
 
-min/max 범위를 지원하는 숫자 카운터입니다.
+A numeric counter with min/max range support.
 
 ## API
 
@@ -15,21 +15,21 @@ function useCounter(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| initialValue | `number` | `0` | 초기 카운터 값 |
-| options.min | `number` | - | 최솟값 |
-| options.max | `number` | - | 최댓값 |
+| initialValue | `number` | `0` | Initial counter value |
+| options.min | `number` | - | Minimum value |
+| options.max | `number` | - | Maximum value |
 
 ### Returns
 
-`[count, actions]` 튜플을 반환합니다.
+Returns a `[count, actions]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| count | `number` | 현재 카운터 값 |
-| actions.increment | `(delta?: number) => void` | 증가 (기본 +1) |
-| actions.decrement | `(delta?: number) => void` | 감소 (기본 -1) |
-| actions.set | `(value: number) => void` | 직접 값 설정 |
-| actions.reset | `() => void` | 초기값으로 리셋 |
+| count | `number` | Current counter value |
+| actions.increment | `(delta?: number) => void` | Increment (default +1) |
+| actions.decrement | `(delta?: number) => void` | Decrement (default -1) |
+| actions.set | `(value: number) => void` | Set the value directly |
+| actions.reset | `() => void` | Reset to the initial value |
 
 ## Usage
 
@@ -53,4 +53,4 @@ function Counter() {
 
 ## Notes
 
-- `min`/`max`가 설정된 경우 값이 자동으로 범위 내로 클램핑됩니다.
+- When `min`/`max` are set, the value is automatically clamped within the range.

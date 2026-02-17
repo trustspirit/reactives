@@ -1,6 +1,6 @@
 # useResizeObserver
 
-요소의 크기 변화를 감지합니다.
+Detects size changes of an element.
 
 ## API
 
@@ -13,17 +13,17 @@ function useResizeObserver<T extends HTMLElement>(): [
 
 ### Parameters
 
-없음
+None
 
 ### Returns
 
-`[ref, size]` 튜플을 반환합니다.
+Returns a `[ref, size]` tuple.
 
 | Name | Type | Description |
 |------|------|-------------|
-| ref | `RefObject<T \| null>` | 관찰할 요소에 연결할 ref |
-| size.width | `number` | 요소 너비 |
-| size.height | `number` | 요소 높이 |
+| ref | `RefObject<T \| null>` | A ref to attach to the element to observe |
+| size.width | `number` | Element width |
+| size.height | `number` | Element height |
 
 ## Usage
 

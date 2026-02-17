@@ -1,6 +1,6 @@
 # useDebounceValue
 
-값의 변경을 지연시킵니다 (debounce).
+Delays value changes (debounce).
 
 ## API
 
@@ -12,14 +12,14 @@ function useDebounceValue<T>(value: T, delay: number): T
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| value | `T` | - | 디바운스할 값 |
-| delay | `number` | - | 지연 시간 (ms) |
+| value | `T` | - | The value to debounce |
+| delay | `number` | - | Delay time (ms) |
 
 ### Returns
 
 | Type | Description |
 |------|-------------|
-| `T` | 디바운스된 값. `delay` ms 동안 변경이 없으면 업데이트 |
+| `T` | The debounced value. Updates after no changes for `delay` ms |
 
 ## Usage
 

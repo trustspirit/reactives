@@ -1,6 +1,6 @@
 # useScroll
 
-스크롤 위치를 추적합니다.
+Tracks the scroll position.
 
 ## API
 
@@ -14,14 +14,14 @@ function useScroll(
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| element | `RefObject<HTMLElement \| null>` | `window` | 스크롤을 추적할 요소 (기본: window) |
+| element | `RefObject<HTMLElement \| null>` | `window` | The element to track scroll position for (default: window) |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| x | `number` | 수평 스크롤 위치 |
-| y | `number` | 수직 스크롤 위치 |
+| x | `number` | Horizontal scroll position |
+| y | `number` | Vertical scroll position |
 
 ## Usage
 
@@ -46,5 +46,5 @@ function ScrollIndicator() {
 
 ## Notes
 
-- SSR 환경에서는 `{ x: 0, y: 0 }`을 반환합니다.
-- 성능을 위해 passive 리스너를 사용합니다.
+- Returns `{ x: 0, y: 0 }` in SSR environments.
+- Uses passive listeners for better performance.

@@ -1,6 +1,6 @@
 # useDarkMode
 
-시스템 환경설정을 지원하는 다크 모드를 관리합니다.
+Manages dark mode with system preference support.
 
 ## API
 
@@ -12,16 +12,16 @@ function useDarkMode(defaultTheme?: Theme): UseDarkModeReturn
 
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
-| defaultTheme | `'light' \| 'dark' \| 'system'` | `'system'` | 초기 테마 |
+| defaultTheme | `'light' \| 'dark' \| 'system'` | `'system'` | Initial theme |
 
 ### Returns
 
 | Name | Type | Description |
 |------|------|-------------|
-| isDark | `boolean` | 현재 다크 모드 여부 |
-| theme | `Theme` | 현재 테마 설정 (`'light'`, `'dark'`, `'system'`) |
-| setTheme | `(theme: Theme) => void` | 테마 변경 |
-| toggle | `() => void` | light ↔ dark 토글 |
+| isDark | `boolean` | Whether dark mode is currently active |
+| theme | `Theme` | Current theme setting (`'light'`, `'dark'`, `'system'`) |
+| setTheme | `(theme: Theme) => void` | Change the theme |
+| toggle | `() => void` | Toggle between light and dark |
 
 ## Usage
 
@@ -43,7 +43,7 @@ function ThemeToggle() {
 
 ## Notes
 
-- localStorage에 테마를 저장하여 새로고침 후에도 유지됩니다.
-- `'system'` 모드에서는 OS의 `prefers-color-scheme`을 따릅니다.
-- `document.documentElement`에 `'dark'` 클래스를 추가/제거합니다.
-- SSR 환경에서는 `defaultTheme`을 반환합니다.
+- Persists the theme to localStorage so it is retained after a page refresh.
+- In `'system'` mode, follows the OS `prefers-color-scheme` setting.
+- Adds/removes the `'dark'` class on `document.documentElement`.
+- Returns `defaultTheme` in SSR environments.
