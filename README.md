@@ -1,4 +1,4 @@
-# reactives
+# reactives-hooks
 
 A collection of useful React hooks and utilities for React and Next.js.
 
@@ -11,19 +11,19 @@ A collection of useful React hooks and utilities for React and Next.js.
 ## Install
 
 ```bash
-npm install reactives
+npm install reactives-hooks
 # or
-pnpm add reactives
+pnpm add reactives-hooks
 # or
-yarn add reactives
+yarn add reactives-hooks
 ```
 
 ## Usage
 
 ```tsx
-import { useToggle, useLocalStorage, useDebounceValue } from 'reactives'
-import { useQueryParams } from 'reactives/next'
-import { cn } from 'reactives/utils'
+import { useToggle, useLocalStorage, useDebounceValue } from 'reactives-hooks'
+import { useQueryParams } from 'reactives-hooks/next'
+import { cn } from 'reactives-hooks/utils'
 
 function App() {
   const [isOpen, toggle] = useToggle(false)
@@ -95,13 +95,13 @@ function App() {
 - `useInfiniteScroll` — Infinite scroll with IntersectionObserver
 - `usePagination` — Pagination logic
 
-### Next.js (`reactives/next`)
+### Next.js (`reactives-hooks/next`)
 - `useQueryParams` — Typed URL query state
 - `useRouteChange` — Route change detection
 - `useSafeAction` — Server Action wrapper
 - `useIsServer` — SSR/CSR detection
 
-### Utils (`reactives/utils`)
+### Utils (`reactives-hooks/utils`)
 - `cn` — Class name merge (clsx + tailwind-merge)
 - `formatDate` — Date formatting (Intl.DateTimeFormat)
 - `sleep` — Promise-based delay

@@ -1,5 +1,5 @@
 {
-  "name": "reactives",
+  "name": "reactives-hooks",
   "version": "0.1.0",
   "description": "A collection of useful React hooks and utilities for React and Next.js",
   "type": "module",
